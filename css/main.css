@@ -1,0 +1,189 @@
+html {
+	height: 100%;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	padding: 0 0 .5em 0;
+	margin: 0;
+}
+/************************************************************************
+ANCHORS
+************************************************************************/
+a[href^="#"]:not(.btn):not(.copyright):before {
+	content: "\f0c1";
+	font-family: 'FontAwesome';
+	font-weight: 100;
+	margin-right: .5em;
+}
+/************************************************************************
+DISABLED
+************************************************************************/
+.disabled {
+	cursor: none;
+	opacity: .5;
+	pointer-events: none;
+	user-select: none;
+}
+/***********************************************************************
+CONTENT
+***********************************************************************/
+.content {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1 0 auto;
+}
+/***********************************************************************
+FOOTER
+***********************************************************************/
+/*.footer {*/
+/*background-color: #2a2a2a;*/
+/*box-shadow: 0 -8px 17px 0 rgba(0, 0, 0, 0.2);*/
+/*color: #fff;*/
+/*display: flex;*/
+/*flex-wrap: wrap;*/
+/*flex: 0 0 auto;*/
+/*justify-content: space-between;*/
+/*padding: 15px;*/
+/*}*/
+/***********************************************************************
+HEADER 
+***********************************************************************/
+.header {
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	flex: 0 0 auto;
+	z-index: 999;
+}
+/************************************************************************
+CENTER
+************************************************************************/
+.center {
+	background-color: #fff;
+	flex: 1 0 auto;
+	overflow: hidden;
+	padding: .5em 1em;
+}
+/************************************************************************
+RIGHT
+************************************************************************/
+/*.right {*/
+/*padding: .5em;*/
+/*background-color: #46b8da;*/
+/*flex: 0 0 auto;*/
+/*}*/
+/************************************************************************
+ACCORDION
+************************************************************************/
+.accordion-section {
+	background-color: #2a2a2a;
+	border-radius: .25em;
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1), 0 -1px 4px 0 rgba(0, 0, 0, 0.1);
+	height: 2em;
+	margin-bottom: .5em;
+	overflow: hidden;
+	padding: 0 .5em;
+}
+.accordion-section:hover {
+	background-color: #2a2a2a;
+}
+.accordion-section h2 {
+	color: #fff;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0;
+}
+.accordion-section h2 > a {
+	color: inherit;
+	display: block;
+	line-height: 2em;
+	outline: 0 none;
+	text-decoration: none;
+}
+.accordion-section:target {
+	background-color: inherit;
+	box-shadow: none;
+	height: auto;
+	padding: 0 1em .5em 1em;
+}
+.accordion-section:target h2 {
+	font-size: 1.6em;
+	color: #2a2a2a;
+}
+.accordion-section,
+.accordion-section h2 {
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+/************************************************************************
+BUTTON
+************************************************************************/
+.btn {
+	background-color: #4a8af4;
+	border-radius: .25em;
+	border-width: 0;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	color: #fff;
+	display: inline-block;
+	line-height: 2em;
+	outline: none;
+	overflow: hidden;
+	padding: 0 1em;
+	position: relative;
+	text-transform: uppercase;
+	transition: background-color .3s;
+}
+.btn:before {
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	background-color: rgba(236, 240, 241, .5);
+	border-radius: 100%;
+	content: "";
+	display: block;
+	left: 50%;
+	padding-top: 0;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 0;
+}
+.btn:active:before {
+	padding-top: 120%;
+	transition: width .1s ease-out, padding-top .1s ease-out;
+	width: 120%;
+}
+.btn-yellow {
+	background-color: #ffce43;
+	color: #2a2a2a;
+}
+.btn-header {
+	width: auto;
+	margin: .2em;
+	padding: 0 .5em;
+}
+/************************************************************************
+MEDIA
+************************************************************************/
+@media (max-width: 768px) {
+	.content {
+		flex-direction: column;
+	}
+	.header {
+		flex-direction: row;
+	}
+	
+}
+ 
