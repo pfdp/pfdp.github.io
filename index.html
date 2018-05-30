@@ -7,10 +7,21 @@
           content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body onload="var urlParams = new URLSearchParams(window.location.search); selectValueInDropdown(urlParams.get('p'));">
+<label for="dropdown">p</label>
+<select id="dropdown">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+</select>
 <script>
   var urlParams = new URLSearchParams(window.location.search);
-  alert('' + JSON.stringify(urlParams.get('p'), null, 4)); /*vtodo: delete!*/
+  alert('' + JSON.stringify(urlParams.get('p'), null, 4));
+
+  function selectValueInDropdown(value) {
+    document.querySelector('option[value="' + value + '"]').selected = true;
+  }
 </script>
 </body>
 </html>
