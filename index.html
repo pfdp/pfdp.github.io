@@ -30,10 +30,9 @@
     "highPice": "3",
     "offerCount": "3",
     "itemCondition": "http://schema.org/NewCondition",
-    "availability": "http://schema.org/InStock",
+    "availability": "http://schema.org/InStock"
   }
 }
-
 </script>
 <!--END STRUCTURED DATA FOR CONFIGURABLE PRODUCT-->
 <!--BEGIN SCRIPT FOR CHANGING STRUCTURED DATA-->
@@ -45,13 +44,13 @@
     document.getElementById(
         'json-ld').innerHTML = '{ "@context": "http://schema.org/", "@type": "Product", "name": "Simple product name", "image": [ "https://example.com/photos/photo.jpg" ], "description": "Simple product", "brand": { "@type": "Thing", "name": "Simple product brand name" }, "offers": { "@type": "Offer", "priceCurrency": "EUR", "price": "'
         + urlParams.get('p')
-        + '", "itemCondition": "http://schema.org/NewCondition", "availability": "http://schema.org/OutOfStock", } }';
+        + '", "itemCondition": "http://schema.org/NewCondition", "availability": "http://schema.org/OutOfStock" } }';
   });
   dropdown.addEventListener('change', function() {
     document.getElementById(
         'json-ld').innerHTML = '{ "@context": "http://schema.org/", "@type": "Product", "name": "Simple product name", "image": [ "https://example.com/photos/photo.jpg" ], "description": "Simple product", "brand": { "@type": "Thing", "name": "Simple product brand name" }, "offers": { "@type": "Offer", "priceCurrency": "EUR", "price": "'
         + dropdown.value
-        + '", "itemCondition": "http://schema.org/NewCondition", "availability": "http://schema.org/OutOfStock", } }';
+        + '", "itemCondition": "http://schema.org/NewCondition", "availability": "http://schema.org/OutOfStock" } }';
   });
 </script>
 <!--END SCRIPT FOR CHANGING STRUCTURED DATA-->
