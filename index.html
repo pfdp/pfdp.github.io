@@ -9,9 +9,8 @@
 </head>
 <body>
 <script>
-  var p = window.location.hostname.searchParams.get('p');
-  alert('' + JSON.stringify(p, null, 4));
-  /*vtodo: delete!*/
+  var urlParams = new URLSearchParams(window.location.search);
+  alert('' + JSON.stringify(urlParams.get('p'), null, 4)); /*vtodo: delete!*/
 </script>
 </body>
 </html>
