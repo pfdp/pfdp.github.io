@@ -1,14 +1,16 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-</head>
-<body onload="var urlParams = new URLSearchParams(window.location.search); document.querySelector('option[value=' + urlParams.get('p') + ']').selected = true;">
+<body>
 <label for="dropdown">p</label>
 <select id="dropdown">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
-    <option value="4">4</option>
 </select>
+<script>
+  window.addEventListener('load', function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    document.querySelector('option[value=' + urlParams.get('p') + ']').selected = true;
+  });
+</script>
 </body>
 </html>
