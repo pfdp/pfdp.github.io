@@ -9,11 +9,9 @@
 </head>
 <body>
 <script>
-    alert('' + JSON.stringify(window.location.hostname, null, 4));/*vtodo: delete!*/
-  // var url_string = 'http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5';
-  // var url = new URL(url_string);
-  // var c = url.searchParams.get('c');
-  // console.log(c);
+  var p = window.location.hostname.searchParams.get('p');
+  alert('' + JSON.stringify(p, null, 4));
+  /*vtodo: delete!*/
 </script>
 </body>
 </html>
