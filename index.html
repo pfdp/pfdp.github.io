@@ -9,7 +9,7 @@
 <script>
   window.addEventListener('load', function() {
     var urlParams = new URLSearchParams(window.location.search);
-    document.querySelector('option[value=' + urlParams.get('p') + ']').selected = true;
+    document.querySelector('option[value="' + urlParams.get('p') + '"]').selected = true;
   });
 </script>
 </body>
