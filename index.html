@@ -9,33 +9,40 @@
 </select>
 <div class="json-ld">
     <script type="application/ld+json">
-    {
-      "@context": "http://schema.org/",
-      "@type": "Product",
-      "name": "Executive Anvil",
-      "image": [
-        "https://example.com/photo1.jpg",
-        "https://example.com/photo2.jpg",
-        "https://example.com/photo3.jpg",
-       ],
-      "description": "Description for conf",
-      "mpn": "925872",
-      "brand": {
-        "@type": "Thing",
-        "name": "Conf"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "EUR",
-        "lowPrice": "1.99",
-        "highPrice": "100.99",
-        "price": "1.99",
-        "priceValidUntil": "2020-11-05",
-        "itemCondition": "http://schema.org/UsedCondition",
-        "availability": "http://schema.org/InStock",
-      }
-    }
-
+        {
+          "@context": "http://schema.org/",
+          "@type": "Product",
+          "name": "Executive Anvil",
+          "image": [
+            "https://example.com/photos/1x1/photo.jpg",
+            "https://example.com/photos/4x3/photo.jpg",
+            "https://example.com/photos/16x9/photo.jpg"
+           ],
+          "description": "Sleeker than ACME's Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height.",
+          "mpn": "925872",
+          "brand": {
+            "@type": "Thing",
+            "name": "ACME"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.4",
+            "reviewCount": "89"
+          },
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "price": "119.99",
+            "priceValidUntil": "2020-11-05",
+            "itemCondition": "http://schema.org/UsedCondition",
+            "availability": "http://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Executive Objects"
+            }
+          }
+        }
+    
     </script>
 </div>
 <script>
@@ -43,10 +50,11 @@
     var urlParams = new URLSearchParams(window.location.search);
     document.querySelector('option[value="' + urlParams.get('p') + '"]').selected = true;
     document.getElementsByClassName(
-        'json-ld')[0].innerHTML = '<script type="application/ld+json"> { "@context": "http://schema.org/", "@type": "Product", "name": "Executive Anvil", "image": [ "https://example.com/photo1.jpg", "https://example.com/photo2.jpg", "https://example.com/photo3.jpg", ], "description": "Description for conf", "mpn": "925872", "brand": { "@type": "Thing", "name": "Conf" }, "offers": { "@type": "AggregateOffer", "priceCurrency": "EUR", "price": "'
+        'json-ld')[0].innerHTML = '<script type="application/ld+json"> { "@context": "http://schema.org/", "@type": "Product", "name": "Executive Anvil", "image": [ "https://example.com/photos/1x1/photo.jpg", "https://example.com/photos/4x3/photo.jpg", "https://example.com/photos/16x9/photo.jpg" ], "description": "Sleeker than ACME\'s Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height.", "mpn": "925872", "brand": { "@type": "Thing", "name": "ACME" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.4", "reviewCount": "89" }, "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "'
         + urlParams.get('p')
-        + '", "priceValidUntil": "2020-11-05", "itemCondition": "http://schema.org/UsedCondition", "availability": "http://schema.org/InStock", } }<\/script>';
+        + '", "priceValidUntil": "2020-11-05", "itemCondition": "http://schema.org/UsedCondition", "availability": "http://schema.org/InStock", "seller": { "@type": "Organization", "name": "Executive Objects" } } }<\/script>';
   });
 </script>
 </body>
 </html>
+    
