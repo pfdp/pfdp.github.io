@@ -2,14 +2,48 @@
 <body>
 <label for="dropdown">p</label>
 <select id="dropdown">
+    <option value="0"></option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
 </select>
+<div class="json-ld">
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "name": "Executive Anvil",
+      "image": [
+        "https://example.com/photo.jpg",
+       ],
+      "description": "Description for conf",
+      "mpn": "925872",
+      "brand": {
+        "@type": "Thing",
+        "name": "Conf"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "1.99",
+        "highPrice": "100.99",
+        "price": "1.99",
+        "priceValidUntil": "2020-11-05",
+        "itemCondition": "http://schema.org/UsedCondition",
+        "availability": "http://schema.org/InStock",
+      }
+    }
+
+    </script>
+</div>
 <script>
   window.addEventListener('load', function() {
     var urlParams = new URLSearchParams(window.location.search);
     document.querySelector('option[value="' + urlParams.get('p') + '"]').selected = true;
+    document.getElementsByClassName(
+        'json-ld')[0].innerHTML = '<script type="application/ld+json"> { "@context": "http://schema.org/", "@type": "Product", "name": "Executive Anvil", "image": [ "https://example.com/photo.jpg", ], "description": "Description for conf", "mpn": "925872", "brand": { "@type": "Thing", "name": "Conf" }, "offers": { "@type": "AggregateOffer", "priceCurrency": "EUR", "price": "'
+        + urlParams.get('p')
+        + '", "priceValidUntil": "2020-11-05", "itemCondition": "http://schema.org/UsedCondition", "availability": "http://schema.org/InStock", } }<\/script>';
   });
 </script>
 </body>
